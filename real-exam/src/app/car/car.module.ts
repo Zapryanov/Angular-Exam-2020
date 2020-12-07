@@ -18,7 +18,8 @@ import { CarItemComponent } from './car-item/car-item.component';
     CarService
   ],
   exports: [
-    CarComponent
+    CarComponent,
+    CarItemComponent
   ]
 })
 export class CarModule { }

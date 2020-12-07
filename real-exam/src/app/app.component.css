@@ -19,3 +19,7 @@ app-aside,
 router-outlet {
   min-height: 95vh;
 }
+
+app-footer {
+  flex: 1 1 100%;
+}

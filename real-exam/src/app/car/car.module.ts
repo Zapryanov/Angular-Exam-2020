@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarComponent } from './car/car.component';
 import { CarService } from './car.service';
+import { CarItemComponent } from './car-item/car-item.component';
 
 
 
 @NgModule({
   declarations: [
-    CarComponent
+    CarComponent,
+    CarItemComponent
   ],
   imports: [
     CommonModule

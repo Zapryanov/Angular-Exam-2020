@@ -15,4 +15,8 @@ export class CarItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleUrl() {
+    return this.car.imageUrl.includes("/static/media/car-logo-1") ? "../../../assets/car-logo-1.png" : this.car.imageUrl;
+  }
+
 }

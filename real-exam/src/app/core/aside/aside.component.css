@@ -1,3 +1,15 @@
+.time {
+  font-family: 'Space Mono', monospace;
+  position: fixed;
+  top: 16vh;
+  background-color: lightgray;
+  border: 1px solid gray;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 1px 3px 1px inset rgb(109, 107, 107);
+  padding: 3px;
+}
+
 .aside {
   margin-top: 14vh;
   position: fixed;

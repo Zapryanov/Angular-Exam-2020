@@ -12,4 +12,13 @@ export class AsideComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleTimer() {
+    const currentdate = new Date();
+    const datetime = "DATE: " + currentdate.getDate() + "/"
+        + (currentdate.getMonth() + 1) + "/"
+        + currentdate.getFullYear()
+
+    return datetime;
+  }
+
 }

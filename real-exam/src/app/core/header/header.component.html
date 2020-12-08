@@ -3,7 +3,7 @@
       <img class="img" src="../../../assets/car-logo.png" alt="logo" />
   </div>
   <nav>
-      <ul>
+      <ul *ngIf="isLogged">
           <li>
             <a>About Us</a>
           </li>
@@ -14,21 +14,47 @@
             <a>Publications</a>
           </li>
           <li>
-            <a>Login</a>
-          </li>
-          <li>
-            <a>Register</a>
-          </li>
-          <li>
             <a>Create</a>
           </li>
           <li>
             <a>Profile</a>
           </li>
           <li>
-            <a>Logout</a>
+            <a (click)="logoutHandler()">Logout</a>
           </li>
+          <!-- <li *ngIf="userService.isLogged">
+            <a>Login</a>
+          </li>
+          <li *ngIf="userService.isLogged">
+            <a>Register</a>
+          </li>
+          <li *ngIf="userService.isLogged">
+            <a>Create</a>
+          </li>
+          <li *ngIf="userService.isLogged">
+            <a>Profile</a>
+          </li>
+          <li *ngIf="userService.isLogged">
+            <a>Logout</a>
+          </li> -->
       </ul>
+      <ul *ngIf="!isLogged">
+        <li>
+          <a>About Us</a>
+        </li>
+        <li>
+          <a>Contact Us</a>
+        </li>
+        <li>
+          <a>Publications</a>
+        </li>
+        <li>
+          <a (click)="loginHandler()">Login</a>
+        </li>
+        <li>
+          <a>Register</a>
+        </li>
+    </ul>
     </nav>
   <div class="user-name">
       <p>

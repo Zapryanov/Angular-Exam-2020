@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AsideComponent } from './aside/aside.component';
+import { UserService } from '../user/user.service';
 
 
 
@@ -14,6 +15,9 @@ import { AsideComponent } from './aside/aside.component';
   ],
   imports: [
     CommonModule
+  ],
+  providers: [
+    UserService
   ],
   exports: [
     HeaderComponent,

@@ -11,8 +11,13 @@ app-aside {
   flex: 0 1 15%;
 }
 
-router-outlet {
+/* router-outlet {
   flex: 0 1 85%;
+} */
+
+app-car {
+  flex: 0 1 85%;
+  margin-top: 14vh;
 }
 
 app-aside,

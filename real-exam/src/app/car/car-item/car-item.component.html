@@ -1,23 +1,21 @@
-<p>car-item works!</p>
-
 <div class="container">
-  <img class="img" src="" alt="car"/>
+  <img class="img" src={{car.imageUrl}} alt="car"/>
   <div class="descriptionContainer">
       <p>
           <span class="title">Model: </span>
-          <span class="textDescription">modelName</span>
+          <span class="textDescription">{{car.modelName}}</span>
       </p>
       <p>
           <span class="title">Description: </span>
-          <span class="textDescription">description.slice(0, 30)..........</span>
+          <span class="textDescription">{{car.description.slice(0, 30)}}.......</span>
       </p>
       <p>
           <span class="title">Price: </span>
           <span>€ </span>
-          <span class="price">price</span>
+          <span class="price">{{car.price}}</span>
       </p>
       <p>
-          <a class="btn">Details</a>
+          <button class="btn">Details</button>
       </p>
   </div>
 </div>

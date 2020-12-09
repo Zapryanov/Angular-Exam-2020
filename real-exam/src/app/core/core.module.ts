@@ -5,6 +5,7 @@ import { FooterComponent } from './footer/footer.component';
 import { AsideComponent } from './aside/aside.component';
 import { UserService } from '../user/user.service';
 import { storageServiceProvider } from './storage.service';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,7 +16,8 @@ import { storageServiceProvider } from './storage.service';
     AsideComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: [
     UserService,

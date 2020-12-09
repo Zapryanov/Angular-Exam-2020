@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AsideComponent } from './aside/aside.component';
 import { UserService } from '../user/user.service';
+import { storageServiceProvider } from './storage.service';
 
 
 
@@ -17,7 +18,8 @@ import { UserService } from '../user/user.service';
     CommonModule
   ],
   providers: [
-    UserService
+    UserService,
+    storageServiceProvider
   ],
   exports: [
     HeaderComponent,

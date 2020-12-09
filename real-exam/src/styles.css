@@ -31,9 +31,3 @@ table {
 button {
   border: none;
 }
-
-app-root {
-  display: flex;
-  flex-flow: row wrap;
-  width: 100%;
-}

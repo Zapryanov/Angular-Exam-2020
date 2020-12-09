@@ -11,19 +11,17 @@ app-aside {
   flex: 0 1 15%;
 }
 
-/* router-outlet {
-  flex: 0 1 85%;
-} */
-
 app-car {
   flex: 0 1 85%;
-  margin-top: 14vh;
+
+/*testing added*/
+  margin-left: 15%;
 }
 
-app-aside,
+/* app-aside,
 router-outlet {
   min-height: 95vh;
-}
+} */
 
 app-footer {
   flex: 1 1 100%;

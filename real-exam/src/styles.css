@@ -31,3 +31,7 @@ table {
 button {
   border: none;
 }
+
+body {
+  background-image: linear-gradient(#eaeaea,#dbdbdb, #f2f2f2, #ada996 );
+}

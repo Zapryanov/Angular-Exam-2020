@@ -1,5 +1,5 @@
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { Injectable, PLATFORM_ID, Provider } from '@angular/core';
+import { PLATFORM_ID, Provider } from '@angular/core';
 
 interface IStorage {
   setItem<T>(key: string, item: T): T;

@@ -1,4 +1,10 @@
+h1 {
+  margin-bottom: 1%;
+  text-align: center;
+}
+
 .containerPage {
+  margin-bottom: 1%;
   width: 100%;
 }
 

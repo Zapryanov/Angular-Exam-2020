@@ -5,6 +5,7 @@ import { CarService } from './car.service';
 import { CarItemComponent } from './car-item/car-item.component';
 import { DetailComponent } from './detail/detail.component';
 import { CarRoutingModule } from './car-routing.module';
+import { EditComponent } from './edit/edit.component';
 
 
 
@@ -12,7 +13,8 @@ import { CarRoutingModule } from './car-routing.module';
   declarations: [
     CarComponent,
     CarItemComponent,
-    DetailComponent
+    DetailComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,9 @@ import { CarRoutingModule } from './car-routing.module';
   exports: [
     CarComponent,
     CarItemComponent,
-    DetailComponent
+    DetailComponent,
+    EditComponent
+
   ]
 })
 export class CarModule { }

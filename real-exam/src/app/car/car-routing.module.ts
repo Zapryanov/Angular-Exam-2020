@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '../core/guards/auth.guard';
 import { DetailComponent } from './detail/detail.component';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {
@@ -14,8 +14,8 @@ const routes: Routes = [
         }
       },
       {
-        path: "details/:id",
-        component: DetailComponent,
+        path: "edit/:id",
+        component: EditComponent,
         data: {
           isLogged: false
         }

@@ -6,6 +6,7 @@ import { AsideComponent } from './aside/aside.component';
 import { UserService } from '../user/user.service';
 import { storageServiceProvider } from './storage.service';
 import { RouterModule } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 
 
 
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
   ],
   providers: [
     UserService,
-    storageServiceProvider
+    storageServiceProvider,
+    AuthGuard
   ],
   exports: [
     HeaderComponent,

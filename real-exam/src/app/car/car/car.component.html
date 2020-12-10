@@ -1,5 +1,23 @@
 <div *ngIf="allCars">
   <app-car-item *ngFor="let car of allCars" [car]="car"></app-car-item>
+  <div *ngIf="allCars.length === 0">
+    <div class="wrapEmpty">
+      <div class="wrapText">
+        <p>
+          <span class="red">No more ads. All cars are sold.</span>
+        </p>
+        <p>
+          If you want to sell your car, please <span class="red">Create</span> your ad!
+      </p>
+        <p>
+          If you are not a registered user, you must first register!
+      </p>
+        <p>
+          Or just login if you are already registered user.
+      </p>
+      </div>
+    </div>
+  </div>
 </div>
 <div *ngIf="!allCars">
   Loading...

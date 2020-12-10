@@ -4,7 +4,7 @@ import { CarComponent } from './car/car.component';
 import { CarService } from './car.service';
 import { CarItemComponent } from './car-item/car-item.component';
 import { DetailComponent } from './detail/detail.component';
-import { RouterModule } from '@angular/router';
+import { CarRoutingModule } from './car-routing.module';
 
 
 
@@ -16,14 +16,15 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    CarRoutingModule
   ],
   providers: [
     CarService
   ],
   exports: [
     CarComponent,
-    CarItemComponent
+    CarItemComponent,
+    DetailComponent
   ]
 })
 export class CarModule { }

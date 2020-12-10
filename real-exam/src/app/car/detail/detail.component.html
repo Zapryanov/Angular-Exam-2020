@@ -1,22 +1,23 @@
 <h1>Details Page</h1>
 <div class="containerPage">
-    <div class="wrapImage">
-        <img src="imageUrl" alt="car" class="img" />
+    <div *ngIf="car" class="wrapImage">
+        <img src={{car.imageUrl}} alt="car" class="img" />
         <div class="textDiv">
             <span class="boldText">Description: </span>
-            description
+            {{car.description}}
         </div>
         <div class="textDiv">
             <span class="boldText">Mobile phone: </span>
-            contact
+            {{car.contact}}
         </div>
         <div class="textDiv">
             <span class="boldText">Price: </span>
-            €<span class="price">price</span>
+            €<span class="price">{{car.price}}</span>
         </div>
         <div>
             <p class="wrapButtons">
                 <button class="btn" >Delete</button>
+                <button [routerLink]="['/cars/edit', car._id]" class="btn" >Edit</button>
                 <!-- <button routerLink=`/edit/${this.props.match.params.imgId}` class="btn">Edit</button> -->
             </p>
 

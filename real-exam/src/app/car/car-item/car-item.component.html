@@ -16,7 +16,7 @@
             <span class="price">{{car.price}}</span>
         </p>
         <p>
-            <button class="btn">Details</button>
+            <button [routerLink]="['/cars/details', car._id]" class="btn">Details</button>
         </p>
     </div>
   </div>

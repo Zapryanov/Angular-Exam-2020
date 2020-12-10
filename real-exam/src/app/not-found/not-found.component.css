@@ -2,6 +2,13 @@
   width: 100%;
 }
 
+h1 {
+  text-align: center;
+  color: #234465;
+  text-decoration: underline;
+  margin-bottom: 2%;
+}
+
 .position {
   margin: 20px 30% 0 30%;
   width: 40%;

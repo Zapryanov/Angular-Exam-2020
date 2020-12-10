@@ -5,16 +5,16 @@
   <nav>
       <ul>
           <li>
-            <a>About Us</a>
+            <a routerLink="/about">About Us</a>
           </li>
           <li>
-            <a>Contact Us</a>
+            <a routerLink="/contact">Contact Us</a>
           </li>
           <li>
-            <a>Publications</a>
+            <a routerLink="/home">Publications</a>
           </li>
           <li *ngIf="isLogged">
-            <a>Create</a>
+            <a routerLink="/create">Create</a>
           </li>
           <li *ngIf="isLogged">
             <a routerLink="/user/profile">Profile</a>

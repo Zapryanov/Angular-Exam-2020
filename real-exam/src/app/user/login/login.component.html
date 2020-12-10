@@ -3,18 +3,25 @@
     <h1>Login</h1>
     <div class="input-form">
       <label for="username">Username: </label>
-      <input type="text" name="username" id="username">
+      <input #inputUsername class="input-error" type="text" name="username" id="username" (keyup)="updateInputValue('username', inputUsername.value)">
     </div>
+    <p *ngIf="showUsernameError" class="error">
+      Username is required!
+    </p>
     <div class="input-form">
       <label for="password">Password: </label>
-      <input type="password" name="password" id="password">
+      <input #inputPassword  class="input-error" type="password" name="password" id="password" (keyup)="updateInputValue('password', inputPassword.value)">
     </div>
+    <p *ngIf="showPasswordError" class="error">
+      Password is required!
+    </p>
     <div class="center">
         <div>
             <span class="styleTextInfo">If you haven't account, then just go to </span>
             <a routerLink="/user/register" class="styleLogin">Register</a>
         </div>
-        <button class="submit">Login</button>
+        <button type="button" (click)="submitFormHandler()" [disabled]="hasFormErrors" class="submit">Login</button>
+        <app-loader [isLoading]="isLoading"></app-loader>
     </div>
   </div>
 </form>

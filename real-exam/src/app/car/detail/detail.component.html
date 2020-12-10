@@ -16,9 +16,8 @@
         </div>
         <div>
             <p class="wrapButtons">
-                <button class="btn" >Delete</button>
+                <button [routerLink]="['cars/delete', car._id]" class="btn" >Delete</button>
                 <button [routerLink]="['/cars/edit', car._id]" class="btn" >Edit</button>
-                <!-- <button routerLink=`/edit/${this.props.match.params.imgId}` class="btn">Edit</button> -->
             </p>
 
         </div>

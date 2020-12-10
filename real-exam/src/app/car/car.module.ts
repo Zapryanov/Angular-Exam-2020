@@ -4,6 +4,7 @@ import { CarComponent } from './car/car.component';
 import { CarService } from './car.service';
 import { CarItemComponent } from './car-item/car-item.component';
 import { DetailComponent } from './detail/detail.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,7 +15,8 @@ import { DetailComponent } from './detail/detail.component';
     DetailComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: [
     CarService

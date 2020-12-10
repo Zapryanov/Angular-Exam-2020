@@ -14,4 +14,8 @@ export class CarService {
   getAllCars(): Observable<ICar[]> {
     return this.http.get<ICar[]>(`${apiUrl}/cars`);
   }
+
+  getCurrentCar(id: string): Observable<ICar> {
+    return this.http.get<ICar>(`${apiUrl}/cars?id=${id}`);
+  }
 }

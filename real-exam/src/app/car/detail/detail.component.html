@@ -15,7 +15,7 @@
             €<span class="price">{{car.price}}</span>
         </div>
         <div>
-            <p class="wrapButtons">
+            <p *ngIf="isLogged" class="wrapButtons">
                 <button [routerLink]="['cars/delete', car._id]" class="btn" >Delete</button>
                 <button [routerLink]="['/cars/edit', car._id]" class="btn" >Edit</button>
             </p>

@@ -1,27 +1,35 @@
-<form class="center">
+<form #f="ngForm" class="center" (ngSubmit)="submitFormHandler(f.value)">
   <div class="position-form">
     <h1>Login</h1>
     <div class="input-form">
       <label for="username">Username: </label>
-      <input #inputUsername class="input-error" type="text" name="username" id="username" (keyup)="updateInputValue('username', inputUsername.value)">
+      <input #inputUsername="ngModel" class="input-error" [class.redBorder]="inputUsername.touched && !!inputUsername.errors"
+        type="text" name="username" id="username" ngModel required minlength="3">
     </div>
-    <p *ngIf="showUsernameError" class="error">
+    <p *ngIf="inputUsername.touched && inputUsername.errors?.required" class="error">
       Username is required!
+    </p>
+    <p *ngIf="inputUsername.touched && inputUsername.errors?.minlength" class="error">
+      Username must be at least 3 characters!
     </p>
     <div class="input-form">
       <label for="password">Password: </label>
-      <input #inputPassword  class="input-error" type="password" name="password" id="password" (keyup)="updateInputValue('password', inputPassword.value)">
+      <input #inputPassword="ngModel"  class="input-error" [class.redBorder]="inputPassword.touched && !!inputPassword.errors"
+        type="password" name="password" id="password" ngModel required minlength="5" pattern="[a-zA-Z0-9]{5,}">
     </div>
-    <p *ngIf="showPasswordError" class="error">
+    <p *ngIf="inputPassword.touched && inputPassword.errors?.required" class="error">
       Password is required!
+    </p>
+    <p *ngIf="inputPassword.touched && inputPassword.errors?.minlength" class="error">
+      Password must be at least 5 characters!
     </p>
     <div class="center">
         <div>
             <span class="styleTextInfo">If you haven't account, then just go to </span>
             <a routerLink="/user/register" class="styleLogin">Register</a>
         </div>
-        <button type="button" (click)="submitFormHandler()" [disabled]="hasFormErrors" class="submit">Login</button>
-        <app-loader [isLoading]="isLoading"></app-loader>
+        <button [disabled]="f.invalid" class="submit">Login</button>
+        <app-loader [isLoading]="isLoading || f.invalid"></app-loader>
     </div>
   </div>
 </form>

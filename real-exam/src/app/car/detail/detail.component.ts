@@ -10,7 +10,7 @@ import { CarService } from '../car.service';
   styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit {
-  
+
   get isLogged(): boolean {
     return this.userService.isLogged;
   }

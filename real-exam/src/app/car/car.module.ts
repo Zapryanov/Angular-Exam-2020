@@ -29,8 +29,8 @@ import { CreateComponent } from './create/create.component';
     CarComponent,
     CarItemComponent,
     DetailComponent,
-    EditComponent
-
+    EditComponent,
+    CreateComponent
   ]
 })
 export class CarModule { }

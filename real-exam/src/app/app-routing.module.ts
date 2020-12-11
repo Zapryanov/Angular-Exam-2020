@@ -32,10 +32,6 @@ const routes: Routes = [
         component: ContactComponent
       },
       {
-        path: "logout",
-        redirectTo: "/contact"
-      },
-      {
         path: '**',
         component: NotFoundComponent,
         data: {

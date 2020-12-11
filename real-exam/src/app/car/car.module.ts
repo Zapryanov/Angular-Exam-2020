@@ -6,6 +6,7 @@ import { CarItemComponent } from './car-item/car-item.component';
 import { DetailComponent } from './detail/detail.component';
 import { CarRoutingModule } from './car-routing.module';
 import { EditComponent } from './edit/edit.component';
+import { CreateComponent } from './create/create.component';
 
 
 
@@ -14,7 +15,8 @@ import { EditComponent } from './edit/edit.component';
     CarComponent,
     CarItemComponent,
     DetailComponent,
-    EditComponent
+    EditComponent,
+    CreateComponent
   ],
   imports: [
     CommonModule,

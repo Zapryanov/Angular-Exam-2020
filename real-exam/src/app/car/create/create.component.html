@@ -1,1 +1,32 @@
-<p>create works!</p>
+<h1>Create</h1>
+<div class="container">
+  <form>
+    <p class="center">
+      <button class="submit">Upload Image</button>
+    </p>
+  </form>
+  <form>
+      <div>
+        <textarea></textarea>
+      </div>
+      <div class="input-container">
+        <label for="modelName">Model: </label>
+        <input type="text" id="modelName" />
+      </div>
+      <div class="input-container">
+        <label for="price">Price: </label>
+        <input type="text" id="price"/>
+      </div>
+      <div class="input-container">
+        <label for="contact">Contact: </label>
+        <input type="text" id="contact" />
+      </div>
+      <div class="input-container">
+        <label for="photo">Photo: </label>
+        <input type="text" id="photo" />
+      </div>
+      <p class="center">
+        <button [routerLink]="['/cars/create']" class="submit">Create</button>
+      </p>
+    </form>
+</div>

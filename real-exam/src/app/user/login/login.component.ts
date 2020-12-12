@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
         console.log(data);
       },
       error: (err) => {
-        this.errorMessage = "ERROR!!!"
+        this.errorMessage = "ERROR - from LOGIN form!!!"
         this.isLoading = false;
       }
     });

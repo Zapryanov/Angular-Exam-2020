@@ -14,7 +14,7 @@ export class HeaderComponent {
   }
 
   constructor(
-    public userService: UserService,
+    private userService: UserService,
     private router: Router
     ) { }
 

@@ -5,7 +5,8 @@ const secret = 'secret';
 
 module.exports = (app) => {
     app.use(cors({
-        exposedHeaders: "Authorization"
+        origin: true,
+        credentials: true
     }));
 
     app.use(express.json());

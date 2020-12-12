@@ -16,7 +16,9 @@ module.exports = {
                 .then((createdUser) => {
                     console.log(createdUser);
                     const token = utils.jwt.createToken({ id: createdUser._id });
-                    res.header("Authorization", token).send(createdUser);
+                    // res.header("Authorization", token).send(createdUser);
+                    res.cookie('x-auth-token', token, { httpOnly: true });
+                    res.status(201).json(createdUser);
                 })
                 .catch((err) => {
                     console.log(err);
@@ -36,7 +38,8 @@ module.exports = {
                     const token = utils.jwt.createToken({ id: user._id });
                     const userForSend = user.toObject();
                     delete userForSend.password;
-                    res.header("Authorization", token).send(userForSend);
+                    res.cookie('x-auth-token', token, { httpOnly: true });
+                    res.json(userForSend);
                 })
                 .catch(next);
         },
@@ -44,7 +47,8 @@ module.exports = {
         verifyLogin: (req, res, next) => {
 
             // const token = req.body.token || '';
-            const token = req.headers.authorization || '';
+            // const token = req.headers.authorization || '';
+            const token = req.cookies['x-auth-token'];
 
             Promise.all([
                 utils.jwt.verifyToken(token),
@@ -75,15 +79,23 @@ module.exports = {
         },
 
         logout: (req, res, next) => {
-            const token = req.cookies[config.authCookieName];
+            // const token = req.cookies[config.authCookieName];
+            const token = req.cookies['x-auth-token'];
             console.log('-'.repeat(100));
             console.log(token);
             console.log('-'.repeat(100));
+            // models.TokenBlacklist.create({ token })
+            //     .then(() => {
+            //         res.clearCookie(config.authCookieName).send('Logout successfully!');
+            //     })
+            //     .catch(next);
             models.TokenBlacklist.create({ token })
-                .then(() => {
-                    res.clearCookie(config.authCookieName).send('Logout successfully!');
-                })
-                .catch(next);
+            .then(() => {
+                res.clearCookie(config.authCookieName)
+                    .status(200)
+                    .send({message: 'Logout successfully!'});
+            })
+            .catch(err => res.send(err));
         }
     },
 

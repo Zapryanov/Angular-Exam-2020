@@ -7,10 +7,16 @@ import { UserService } from 'src/app/user/user.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
+
 export class HeaderComponent {
 
   get isLogged(): boolean {
     return this.userService.isLogged;
+  }
+
+  get currentUser(): any {
+    return this.userService.currentUser;
   }
 
   constructor(

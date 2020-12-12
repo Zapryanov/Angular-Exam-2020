@@ -27,4 +27,8 @@ export class CarService {
     return this.http.put<ICar>(`${apiUrl}/cars/${id}`, data, { withCredentials: true });
   }
 
+  deleteCar(id: string): Observable<any> {
+    return this.http.delete<any>(`${apiUrl}/cars/${id}`, { withCredentials: true });
+  }
+
 }

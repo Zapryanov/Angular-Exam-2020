@@ -16,7 +16,7 @@
         </div>
         <div>
             <p *ngIf="isLogged" class="wrapButtons">
-                <button [routerLink]="['cars/delete', car._id]" class="btn" >Delete</button>
+                <button (click)="deleteHandler(car._id)" class="btn" >Delete</button>
                 <button [routerLink]="['/cars/edit', car._id]" class="btn" >Edit</button>
             </p>
 

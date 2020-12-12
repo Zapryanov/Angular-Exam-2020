@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ICar } from 'src/app/shared/interfaces';
 import { UserService } from 'src/app/user/user.service';
 import { CarService } from '../car.service';
@@ -18,7 +18,8 @@ export class DetailComponent implements OnInit {
   car: ICar;
 
   constructor(
-    carService: CarService,
+    private router: Router,
+    private carService: CarService,
     activatedRoute: ActivatedRoute,
     public userService: UserService
     ) {
@@ -32,5 +33,17 @@ export class DetailComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  deleteHandler(id: string): void {
+    this.carService.deleteCar(id).subscribe({
+      next: () => {
+        this.router.navigate(["/"]);
+      },
+      error: (err) => {
+        console.error(err)
+      }
+    })
+  }
+
 
 }

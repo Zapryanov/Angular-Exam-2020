@@ -19,7 +19,7 @@ export class UserService {
   constructor(private http: HttpClient) {}
 
   profile(): Observable<any> {
-    return this.http.get(`${apiUrl}/user/profile`, { withCredentials: true}).pipe(
+    return this.http.get(`${apiUrl}/user/verify`, { withCredentials: true}).pipe(
       tap(((user: IUser) => this.currentUser = user)),
       catchError(() => { this.currentUser = null; return of(null); })
     );

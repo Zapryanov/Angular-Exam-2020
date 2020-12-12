@@ -56,3 +56,17 @@ textarea {
 input {
   margin-top: 10px;
 }
+
+p {
+  color: red;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+.redBorder {
+  border: 2px solid red;
+}
+
+input:not(.redBorder) {
+  border: 1px solid black;
+}

@@ -18,8 +18,6 @@ export class HeaderComponent {
     private router: Router
     ) { }
 
-
-
   logoutHandler(): void {
     this.userService.logout().subscribe(() => this.router.navigate(["/user/login"]));
   }

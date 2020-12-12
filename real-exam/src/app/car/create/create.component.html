@@ -1,32 +1,44 @@
 <h1>Create</h1>
 <div class="container">
-  <form>
+  <!-- <form>
     <p class="center">
       <button class="submit">Upload Image</button>
     </p>
-  </form>
-  <form>
+  </form> -->
+  <form #f="ngForm" (ngSubmit)="submitHandler(f.value)">
       <div>
-        <textarea></textarea>
+        <textarea #carTextarea="ngModel" type="text" name="description" id="description" ngModel required></textarea>
       </div>
+      <p *ngIf="carTextarea.touched && carTextarea.errors?.required">
+        Description is required!
+      </p>
       <div class="input-container">
         <label for="modelName">Model: </label>
-        <input type="text" id="modelName" />
+        <input #carModel="ngModel" type="text" name="modelName" id="modelName" ngModel required />
       </div>
+      <p *ngIf="carModel.touched && carModel.errors?.required" class="error">
+        Model is required!
+      </p>
       <div class="input-container">
         <label for="price">Price: </label>
-        <input type="text" id="price"/>
+        <input #carPrice="ngModel" type="text" name="price" id="price" ngModel required/>
       </div>
+      <p *ngIf="carPrice.touched && carPrice.errors?.required" class="error">
+        Price is required!
+      </p>
       <div class="input-container">
         <label for="contact">Contact: </label>
-        <input type="text" id="contact" />
+        <input #carContact="ngModel" type="text" name="contact" id="contact" ngModel required />
       </div>
+      <p *ngIf="carContact.touched && carContact.errors?.required" class="error">
+        Contact is required!
+      </p>
       <div class="input-container">
-        <label for="photo">Photo: </label>
-        <input type="text" id="photo" />
+        <label for="imageUrl">Photo: </label>
+        <input #carImage="ngModel" type="text" name="imageUrl" id="imageUrl" ngModel/>
       </div>
       <p class="center">
-        <button [routerLink]="['/cars/create']" class="submit">Create</button>
+        <button [disabled]="f.invalid" class="submit">Create</button>
       </p>
     </form>
 </div>

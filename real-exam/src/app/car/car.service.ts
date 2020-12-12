@@ -16,6 +16,11 @@ export class CarService {
   }
 
   getCurrentCar(id: string): Observable<ICar> {
-    return this.http.get<ICar>(`${apiUrl}/cars?id=${id}`);
+    return this.http.get<ICar>(`${apiUrl}/cars?id=${id}`, { withCredentials: true });
   }
+
+  saveCar(data: any): Observable<ICar> {
+    return this.http.post<ICar>(`${apiUrl}/cars`, data, { withCredentials: true });
+  }
+
 }

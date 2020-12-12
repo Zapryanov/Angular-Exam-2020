@@ -7,6 +7,7 @@ import { DetailComponent } from './detail/detail.component';
 import { CarRoutingModule } from './car-routing.module';
 import { EditComponent } from './edit/edit.component';
 import { CreateComponent } from './create/create.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -20,7 +21,8 @@ import { CreateComponent } from './create/create.component';
   ],
   imports: [
     CommonModule,
-    CarRoutingModule
+    CarRoutingModule,
+    FormsModule
   ],
   providers: [
     CarService

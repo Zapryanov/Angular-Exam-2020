@@ -16,7 +16,7 @@ export class CarItemComponent implements OnInit {
   }
 
   handleUrl() {
-    return this.car.imageUrl.includes("/static/media/car-logo-1") ? "../../../assets/car-logo-1.png" : this.car.imageUrl;
+    return !this.car.imageUrl ? "../../../assets/car-logo-1.png" : this.car.imageUrl.includes("/static/media/car-logo-1") ? "../../../assets/car-logo-1.png" : this.car.imageUrl;
   }
 
 }

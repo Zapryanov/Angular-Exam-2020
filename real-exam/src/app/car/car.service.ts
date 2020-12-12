@@ -23,4 +23,8 @@ export class CarService {
     return this.http.post<ICar>(`${apiUrl}/cars`, data, { withCredentials: true });
   }
 
+  editCar(data: any, id: string): Observable<ICar> {
+    return this.http.put<ICar>(`${apiUrl}/cars/${id}`, data, { withCredentials: true });
+  }
+
 }

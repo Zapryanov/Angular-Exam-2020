@@ -1,32 +1,44 @@
 <h1>Edit Page</h1>
 <div class="container">
-  <form>
+  <!-- <form>
     <p class="center">
       <button class="submit">Upload Image</button>
     </p>
+  </form> -->
+  <form #fe="ngForm" (ngSubmit)="editHandler(fe.value, car?._id)">
+    <div>
+      <textarea #carTextarea="ngModel" type="text" name="description" id="description" ngModel required [ngModel]="car?.description"></textarea>
+    </div>
+    <p *ngIf="carTextarea.touched && carTextarea.errors?.required">
+      Description is required!
+    </p>
+    <div class="input-container">
+      <label for="modelName">Model: </label>
+      <input #carModel="ngModel" type="text" name="modelName" id="modelName" ngModel required [ngModel]="car?.modelName" />
+    </div>
+    <p *ngIf="carModel.touched && carModel.errors?.required" class="error">
+      Model is required!
+    </p>
+    <div class="input-container">
+      <label for="price">Price: </label>
+      <input #carPrice="ngModel" type="text" name="price" id="price" ngModel required [ngModel]="car?.price" />
+    </div>
+    <p *ngIf="carPrice.touched && carPrice.errors?.required" class="error">
+      Price is required!
+    </p>
+    <div class="input-container">
+      <label for="contact">Contact: </label>
+      <input #carContact="ngModel" type="text" name="contact" id="contact" ngModel required [ngModel]="car?.contact" />
+    </div>
+    <p *ngIf="carContact.touched && carContact.errors?.required" class="error">
+      Contact is required!
+    </p>
+    <div class="input-container">
+      <label for="imageUrl">Photo: </label>
+      <input #carImage="ngModel" type="text" name="imageUrl" id="imageUrl" ngModel [ngModel]="car?.imageUrl"/>
+    </div>
+    <p class="center">
+      <button [disabled]="fe.invalid" class="submit">Edit</button>
+    </p>
   </form>
-  <form>
-      <div>
-        <textarea></textarea>
-      </div>
-      <div class="input-container">
-        <label for="modelName">Model: </label>
-        <input type="text" id="modelName" />
-      </div>
-      <div class="input-container">
-        <label for="price">Price: </label>
-        <input type="text" id="price"/>
-      </div>
-      <div class="input-container">
-        <label for="contact">Contact: </label>
-        <input type="text" id="contact" />
-      </div>
-      <div class="input-container">
-        <label for="photo">Photo: </label>
-        <input type="text" id="photo" />
-      </div>
-      <p class="center">
-        <button [routerLink]="['/cars/update', car?._id]" class="submit">Update</button>
-      </p>
-    </form>
 </div>

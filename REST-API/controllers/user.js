@@ -14,7 +14,7 @@ module.exports = {
             const { username, password } = req.body;
             models.User.create({ username, password })
                 .then((createdUser) => {
-                    console.log(createdUser);
+                    // console.log(createdUser);
                     const token = utils.jwt.createToken({ id: createdUser._id });
                     // res.header("Authorization", token).send(createdUser);
                     res.cookie('x-auth-token', token, { httpOnly: true });

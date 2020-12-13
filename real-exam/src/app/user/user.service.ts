@@ -15,6 +15,10 @@ export class UserService {
   get isLogged(): boolean {
     return !!this.currentUser;
   }
+// last added in the morning - get username()
+  get username(): string {
+    return this.currentUser?.username || "Guest";
+  }
 
   constructor(private http: HttpClient) {}
 

@@ -41,6 +41,7 @@
         </div>
         <button [disabled]="isLoading || rf.invalid" class="submit">Register</button>
         <app-loader [isLoading]="isLoading"></app-loader>
+        <p class="error errorMsg">{{errorMessage}}</p>
     </div>
   </div>
 </form>

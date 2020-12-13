@@ -23,16 +23,22 @@ export class RegisterComponent implements OnInit {
   registerHandler(formValue: {username: string, password: string, rePassword: string}): void {
     this.isLoading = true;
     this.errorMessage = "";
-    this.userService.register(formValue).subscribe({
-      next: (data) => {
-        this.isLoading = false;
-        this.router.navigate(["/"]);
-      },
-      error: (err) => {
-        this.errorMessage = "ERROR!!!"
-        this.isLoading = false;
-      }
-    });
+    if (formValue.password === formValue.rePassword) {
+      this.userService.register(formValue).subscribe({
+        next: (data) => {
+          this.isLoading = false;
+          this.router.navigate(["/"]);
+        },
+        error: (err) => {
+          this.errorMessage = "Password and Re-Password do not match!";
+          this.isLoading = false;
+        }
+      });
+    } else {
+      this.isLoading = false;
+      this.errorMessage = "Password and Re-Password do not match!";
+      return;
+    }
   }
 
 }

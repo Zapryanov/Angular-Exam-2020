@@ -27,10 +27,10 @@ export class LoginComponent implements OnInit {
       next: (data) => {
         this.isLoading = false;
         this.router.navigate(["/"]);
-        console.log(data);
+        // console.log(data);
       },
       error: (err) => {
-        this.errorMessage = "ERROR - from LOGIN form!!!"
+        this.errorMessage = "Username or password is INCORRECT!!!";
         this.isLoading = false;
       }
     });

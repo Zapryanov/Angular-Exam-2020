@@ -8,6 +8,7 @@ import { CarRoutingModule } from './car-routing.module';
 import { EditComponent } from './edit/edit.component';
 import { CreateComponent } from './create/create.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     CarRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [
     CarService

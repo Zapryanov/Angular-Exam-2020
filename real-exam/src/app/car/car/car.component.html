@@ -20,5 +20,6 @@
   </div>
 </div>
 <div *ngIf="!allCars">
-  Loading...
+  <app-loader [isLoading]="isLoading"></app-loader>
+
 </div>

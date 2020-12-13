@@ -30,6 +30,7 @@
         </div>
         <button [disabled]="f.invalid" class="submit">Login</button>
         <app-loader [isLoading]="isLoading"></app-loader>
+        <p class="error errorMsg">{{errorMessage}}</p>
     </div>
   </div>
 </form>

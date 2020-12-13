@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule,
     CoreModule,
     CarModule,
-    UserModule
+    UserModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

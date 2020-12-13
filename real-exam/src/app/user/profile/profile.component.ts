@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CarService } from 'src/app/car/car.service';
+import { ICar } from 'src/app/shared/interfaces';
 import { UserService } from '../user.service';
 
 @Component({
@@ -16,9 +18,21 @@ export class ProfileComponent implements OnInit {
     return this.userService.username;
   }
 
-  constructor(private userService: UserService) { }
+  isLoading = true;
+
+  allCars: ICar[];
+
+  constructor(
+    private userService: UserService,
+    private carService: CarService
+    ) { }
 
   ngOnInit(): void {
+    this.carService.getAllCars().subscribe((data) => {
+      this.isLoading = false;
+      this.allCars = data.filter(car=> car.author.username===this.username);
+      // console.log(this.allCars);
+    })
   }
 
 }

@@ -11,5 +11,5 @@
             <span class="price">Post counts: {{carsCount}}</span>
         </p>
     </div>
-    cars
+    <app-car-item *ngFor="let car of allCars" [car]="car"></app-car-item>
 </div>

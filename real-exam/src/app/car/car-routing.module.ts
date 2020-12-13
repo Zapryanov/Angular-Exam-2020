@@ -7,7 +7,7 @@ import { EditComponent } from './edit/edit.component';
 const routes: Routes = [
   {
     path: "cars",
-    canActivateChild: [AuthGuard],
+    // canActivateChild: [AuthGuard],
     children: [
       {
         path: "details/:id",

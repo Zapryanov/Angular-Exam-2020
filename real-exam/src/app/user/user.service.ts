@@ -15,9 +15,18 @@ export class UserService {
   get isLogged(): boolean {
     return !!this.currentUser;
   }
-// last added in the morning - get username()
+
   get username(): string {
     return this.currentUser?.username || "Guest";
+  }
+
+// Get user ID
+  get userId(): string {
+    return this.currentUser?._id;
+  }
+
+  get countCars(): number {
+    return this.currentUser?.posts.length;
   }
 
   constructor(private http: HttpClient) {}

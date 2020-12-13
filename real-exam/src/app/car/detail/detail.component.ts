@@ -15,6 +15,10 @@ export class DetailComponent implements OnInit {
     return this.userService.isLogged;
   }
 
+  get currentUserId(): string {
+    return this.userService.userId;
+  }
+
   car: ICar;
 
   constructor(
@@ -27,6 +31,7 @@ export class DetailComponent implements OnInit {
 
       carService.getCurrentCar(id).subscribe((car) => {
         this.car = car;
+        console.log(car)
       })
     }
 

@@ -10,17 +10,12 @@ Project setup:
     In real-exam:
         npm install
 
-To start the REST-API, in the console I use the command "npm start" 
+To start the BackEnd, open CMD in REST-API and use the command "npm start" 
 To start the Angular App open CMD in real-exam and use command "ng serve"
 
 Generated with Angular CLI:
     Angular CLI Version: 10.2.0
     Node: 14.15.0
-
-<!-- Usage of external API's:
-    - Cloudinary ("Here store the pictures)
-    - Google.Maps
-    - Google-Fonts (included in this App from Google) -->
 
 Usage of cloud storage:
     - Atlas (MongoDb) - (Here store all info about each car)
@@ -46,7 +41,4 @@ Creating Car Ad:
     When creating a car, all fields are required except for the photo field. If no photo is added, the application adds a default one.
 
 Good User Interface:
-    <!-- - Loading spinner, when refresh the App and make request to database; -->
-    <!-- - Buttons "sort", "details", "edit", "delete" whit one CSS - effect -->
-    - Buttons in header with another CSS effect;
-    - Text in footer with hover effect - moving shadow
+    - Loading spinner animation, when refresh the App and make request to database;

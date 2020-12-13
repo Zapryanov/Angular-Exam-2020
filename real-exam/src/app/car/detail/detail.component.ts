@@ -31,6 +31,9 @@ export class DetailComponent implements OnInit {
 
       carService.getCurrentCar(id).subscribe((car) => {
         this.car = car;
+        if (car.imageUrl === "") {
+          car.imageUrl = "../../assets/car-logo-1.png"
+        }
         console.log(car)
       })
     }

@@ -34,3 +34,20 @@ h1 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding: 10px 0;
 }
+
+.map {
+  display: flex;
+  height: 40vh;
+  justify-content: center;
+  width: 100%;
+}
+
+.center {
+  height: 100%;
+  width: 80%;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
